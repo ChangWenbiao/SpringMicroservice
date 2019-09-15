@@ -1,0 +1,12 @@
+server:
+   port: 8091
+   contextPath:   /auth
+   
+spring:
+  application:
+    name: authenticationservice
+  profiles:
+    active: default
+  cloud:
+    config:
+      uri: http://localhost:8888
