@@ -106,7 +106,7 @@ public class LicenseService {
     }
 
 	public void saveLicense(License license) {
-		license.withId(UUID.randomUUID().toString());
+		license.withId(UUID.randomUUID().toString().replace("-",""));
 		licenseRepository.save(license);
 	}
 

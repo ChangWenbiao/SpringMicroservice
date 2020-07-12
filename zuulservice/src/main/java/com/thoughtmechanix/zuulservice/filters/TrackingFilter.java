@@ -47,7 +47,7 @@ public class TrackingFilter extends ZuulFilter {
 	}
 
 	private String generateCorrelationId() {
-		return java.util.UUID.randomUUID().toString();
+		return java.util.UUID.randomUUID().toString().replace("-","");
 	}
 	
     private String getOrganizationId(){
@@ -55,7 +55,7 @@ public class TrackingFilter extends ZuulFilter {
         String result="";
         if (filterUtils.getAuthToken()!=null){
 
-            String authToken = filterUtils.getAuthToken().replace("Bearer ","");
+            String authToken = filterUtils.getAuthToken().replace("bearer ","");
             try {
                 Claims claims = Jwts.parser()
                         .setSigningKey(serviceConfig.getJwtSigningKey().getBytes("UTF-8"))
@@ -69,6 +69,7 @@ public class TrackingFilter extends ZuulFilter {
         return result;
     }
 
+    @Override
 	public Object run() {
 
 		if (isCorrelationIdPresent()) {
