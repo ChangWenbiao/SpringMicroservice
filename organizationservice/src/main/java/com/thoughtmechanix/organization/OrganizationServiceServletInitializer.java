@@ -3,7 +3,7 @@ package com.thoughtmechanix.organization;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 
-public class MyServletInitializer extends SpringBootServletInitializer{
+public class OrganizationServiceServletInitializer extends SpringBootServletInitializer{
 
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
