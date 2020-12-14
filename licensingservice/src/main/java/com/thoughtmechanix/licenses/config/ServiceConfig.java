@@ -20,7 +20,7 @@ public class ServiceConfig {
 	}
 
 	public Integer getRedisPort() {
-		return new Integer(redisPort).intValue();
+		return Integer.valueOf(redisPort).intValue();
 	}
 
 	public String getExampleProperty() {
